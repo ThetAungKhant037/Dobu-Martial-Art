@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<style>
+   
+    body {
+  background-image: url("img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  
+}
+    
+/* Navigation Bar Styles */
+
+.navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color:black;
+          color: #fff;
+          padding: 10px 20px;
+          margin: 0;
+          width: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+        
+        .nav-list {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .nav-list li {
+          margin: 0 10px;
+          position: relative;
+        }
+        
+        .nav-list li a {
+          color: #fff;
+          text-decoration: none;
+        }
+        
+        .dropdown-list {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #333;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .dropdown-list li {
+          margin: 0;
+        }
+        
+        .dropdown-list li a {
+          color: #fff;
+          display: block;
+          padding: 10px 20px;
+        }
+        
+        .dropdown:hover .dropdown-list {
+          display: block;
+        }
+        
+        /* Hamburger Styles */
+        
+        .nav-toggle {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+        
+        .hamburger {
+          display: block;
+          width: 20px;
+          height: 2px;
+          background-color: #fff;
+          position: relative;
+          margin-top: 3px;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          position: absolute;
+          left: 0;
+          transition: transform 0.3s ease-in-out;
+        }
+        
+        .hamburger::before {
+          transform: translateY(-6px);
+        }
+        
+        .hamburger::after {
+          transform: translateY(6px);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger {
+          transform: rotate(45deg);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger::before {
+          transform: rotate(-45deg) translateY(0);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger::after {
+          transform: rotate(45deg) translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+          .nav-list {
+            display: none;
+            flex-direction: column;
+          }
+          
+          .nav-list li {
+            margin: 10px 0;
+          }
+          
+          .dropdown {
+            position: static;
+          }
+          
+          .dropdown-list {
+            display: block;
+            position: static;
+            background-color: #444;
+            box-shadow: none;
+          }
+          
+          .nav-toggle {
+            display: block;
+          }
+        }
+
+
+/*footer*/
+
+#footer .twitter {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+#footer .linkedin {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -78px 0;
+}
+#footer .facebook {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -233px 0;
+}
+#footer .skype {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -156px 0;
+}
+#footer .flickr {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -310px 0;
+}
+#footer a {
+  height: 56px;
+  width: 56px;
+  display: inline-block;
+  margin: 10px;
+}
+#footer a:hover {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+#footer .twitter:hover {
+  background-position: 0 -56px;
+}
+#footer .facebook:hover {
+  background-position: -233px -56px;
+}
+#footer .skype:hover {
+  background-position: -156px -56px;
+}
+#footer .linkedin:hover {
+  background-position: -78px -56px;
+}
+#footer .flickr:hover {
+  background-position: -310px -56px;
+}
+.bg-dark-1{
+  background-color: black;
+
+ 
+}
+
+/*table*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 50%;
+  border: 3px solid red;
+  
+}
+
+th, td {
+  text-align: left;
+  padding: 1px;
+  border: 1px solid blue;
+  color:black ;
+  font-weight: bold;
+}
+
+table a {
+  color: inherit;
+
+}
+
+/*search box */
+
+.search-box {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.search-button {
+  background-color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fa-search {
+  color: #444;
+}
+
+
+</style>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>DOBU Martial Arts</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+
+
+
+
+<body >
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><img src="img/logo.png" alt="Logo" style="height:25px ;"></li>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <a href="#">Courses</a>
+        <ul class="dropdown-list">
+          <li><a href="karate.html">karate</a></li>
+          <li><a href="judo.html">Judo</a></li>
+          <li><a href="muaythai.html">Muay Thai</a></li>
+          <li><a href="jujistu.html">Jujistu</a></li>
+          <li><a href="training.html">Personal fitness training</a></li>
+          <li><a href="beginner.html">Beginner's self-defense</a></li>
+        </ul>
+      </li>
+      <li><a href="instructor.html">Instructor details</a></li>
+      <li><a href="fee.html">Fees</a></li>
+      <li ><a href="registration.html">Membership registration</a></li>
+    </ul>
+    <form class="search-form">
+      <input type="text" class="search-box" placeholder="Search..">
+      <button type="submit" class="search-button">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav()">
+      <span class="hamburger"></span>
+    </button>
+    
+  </nav>
+  
+  <script>
+    // jquery code
+    function toggleNav() {
+  var navList = document.querySelector('.nav-list');
+  navList.classList.toggle('active');
+  // Show the nav-list when the hamburger icon is clicked
+  if (navList.classList.contains('active')) {
+    navList.style.display = 'flex';
+  } else {
+    navList.style.display = 'none';
+  }
+}
+
+</script>
+
+<br>
+
+
+<div style="text-align: center;font-weight: bold;"><div style="color: purple;">
+  <h2>Welcome to the DOBU Martial Art</h2>
+  <p style="color: black;">DoBu Martial Arts is a martial arts gym. The gym offers classes in a number of different
+  martial arts, as well as fitness training and self-defence courses. The gym has a large, matted
+  martial arts area, a fully-equipped gym, a sauna, a steam room and changing and shower
+  facilities</p>
+</div></div>
+<br>
+
+
+
+
+    
+      
+
+
+
+
+
+
+<div style="overflow-x:auto;">
+  <div style="color: purple;text-align: left;padding-left:20px;font-weight: bold;">
+    <h5>Time Table of Dobu Martial Art</h5>
+  </div>
+  <table style="background-color: #fff;" >
+ <tr>
+   <th>Time</th>
+   <th>Monday</th>
+   <th>Tuesday</th>
+   <th>Wednesday</th>
+   <th>Thursday</th>
+   <th>Friday</th>
+   <th>Saturday</th>
+   <th>Sunday</th>
+ </tr>
+ 
+ <tr>
+   <th>6:00-7:00</th>
+   <th><a href="jujistu.html">Jujitsu</a></th>
+   <th>Karate</th>
+   <th>Judo</th>
+   <th><a href="jujistu.html">Jujitsu</a></th>
+   <th>Muay Thai</th>
+   <th>___</th>
+   <th>___</th>
+ </tr>
+ 
+ <tr>
+   <th>8:00-10:00</th>
+   <th>Muay Thai</th>
+   <th>PrivateTuition</th>
+   <th>PrivateTuition</th>
+   <th>PrivateTuition</th>
+   <th><a href="jujistu.html">Jujitsu</a></th>
+   <th>PrivateTuition</th>
+   <th>PrivateTuition</th>
+ </tr>
+ 
+ <tr>
+   <th>10:30-12:00</th>
+   <th>PrivateTuition</th>
+   <th>PrivateTuition</th>
+   <th>PrivateTuition</th>
+   <th>PrivateTuition</th>
+   <th>PrivateTuition</th>
+   <th>Judo</th>
+   <th>Karate</th>
+   
+   <tr>
+   <th>13:00-14:30</th>
+   <th>p.practise</th>
+   <th>p.practise</th>
+   <th>p.practise</th>
+   <th>p.practise</th>
+   <th>p.practise</th>
+   <th>Karate</th>
+   <th>Judo</th>
+ </tr>
+ 
+ <tr>
+   <th>15:00-17:00</th>
+   <th><a href="jujistu.html">kid Jujitsu</a></th>
+   <th>kid judo</th>
+   <th>kid karate</th>
+   <th><a href="jujistu.html"> kid Jujitsu</a></th>
+   <th>kid judo</th>
+   <th>Muay Thai</th>
+   <th><a href="jujistu.html">Jujitsu</a></th>
+ </tr>
+ 
+ <tr>
+   <th>17:30-19:00</th>
+   <th>Karate</th>
+   <th>Muay Thai</th>
+   <th>Judo</th>
+   <th><a href="jujistu.html">Jujitsu</a></th>
+   <th> Muay Thai</th>
+   <th>___</th>
+   <th>___</th>
+ </tr>
+ 
+ <tr>
+   <th>119:00-21:00</th>
+   <th><a href="jujistu.html">Jujitsu</a></th>
+   <th>Judo</th>
+   <th><a href="jujistu.html">Jujitsu</a></th>
+   <th>Karate</th>
+   <th>PrivateTuition</th>
+   <th>___</th>
+   <th>___</th>
+ </tr>
+  </table>
+ 
+ 
+ 
+ </div>
+ <hr>
+
+<br>
+<style>.product-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 3px solid purple;
+}
+
+.button {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+  margin: 4px 5px;
+}
+
+.button:hover:after {
+  top: 0px;
+  left: 0px;
+}
+</style>
+
+
+<div class="container"><div style="color: purple;text-align: center;padding-left:20px;font-weight: bold;">
+    <h3>Gym and facilities of Dobu Martial Art</h3>
+  </div>
+  <div class="row">
+
+    
+    <div class="col-md-4">
+      <img src="img/slide1.jpg" class="product-img">
+    </div>
+
+    <div class="col-md-4">
+      <img src="img/slide2.jpg" class="product-img">
+    </div>
+
+    <div class="col-md-4">
+      <img src="img/slide3.jpg" class="product-img">
+    </div>
+
+  </div>
+</div><br>
+<style>.aa{
+width: 80%;
+  margin: 50px auto;
+  background-color: #fff;
+  text-align: center;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+  </style>
+<center> 
+  <div style="border: 1px solid gray;
+  padding: 8px;" class="aa">
+    <h1 style="
+    text-transform: uppercase;
+    color: #4CAF50;">Gym and Fitness room of Dobu Martial art</h1>
+    <p style="text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 3px;color: red;font-weight: bolder;">Welcome to Dobu Martial Art! Our gym is a top-of-the-line facility that offers everything you need to achieve your fitness and martial arts goals. Whether you're a beginner or an experienced martial artist, we have something for everyone.
+      In addition to our world-class facilities, we offer a variety of classes and programs to suit your needs and interests. Our classes range from beginner-level to advanced, and we offer everything from traditional martial arts like karate and taekwondo to more modern styles like MMA and Brazilian Jiu-Jitsu. We also offer specialized programs like self-defense classes and fitness-focused workouts. Moreover, you can choose the instructor to have the private tuition with you too.
+      <a target="_blank" href="instructor.html" style=" text-decoration: none;
+      color: #008CBA;">"Try it Yourself"</a></p>
+  </div>
+  <a href="registration.html"><button class="button">Login</button></a>
+  
+  <a href="registration.html"><button class="button">Register</button></a></center>
+
+
+  
+
+
+<br>
+<br>
+<br>
+<style>/* Set a minimum height for the footer to prevent it from collapsing */
+  footer {
+    min-height: 100px;
+  }
+  
+ 
+  
+  /* Adjust the margin and padding for smaller screens */
+  @media (max-width: 768px) {
+    footer {
+      min-height: 150px;
+    }
+    #footer a {
+      margin: 0 5px;
+    }
+    
+  }
+  @media only screen and (max-width: 100px) {
+  .search-form {
+    display: none;
+  }
+}
+  </style>
+<footer class="bg-dark-1">
+  <section id="footer" class="py-5">
+    <div class="container text-center">
+      <a href="https://twitter.com/" class="twitter"></a>
+      <a href="https://www.linkedin.com/login" class="linkedin"></a>
+      <a href="https://www.facebook.com/" class="facebook"></a>
+      <a href="#" class="skype"></a>
+      <a href="#" class="flickr"></a>
+      <h6 class="m-0 mt-4 text-center text-white text-capitalize">Location: Myitkyina Township/Myanmar</h6>
+    </div>
+  </section>
+  <center></div><a href="privacy.html">privacy and policy</a></center>
+  <br>
+  <br>
+  
+</footer>
+
+</body>
+
+</html>

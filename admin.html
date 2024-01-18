@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>DOBU Martial Arts</title>
+        
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    </head>
+    <style>
+        body{
+            background-color: gainsboro;
+        }
+
+        .container {
+  width: 80%;
+  margin: 50px auto;
+  background-color: #fff;
+  text-align: center;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 24px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+a:hover {
+  background-color: #555;
+}
+/* Navigation Bar Styles */
+
+.navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color:black;
+          color: #fff;
+          padding: 10px 20px;
+          margin: 0;
+          width: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 1000;
+        }
+        
+        .nav-list {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .nav-list li {
+          margin: 0 10px;
+          position: relative;
+        }
+        
+        .nav-list li a {
+          color: #fff;
+          text-decoration: none;
+        }
+        
+        .dropdown-list {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #333;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .dropdown-list li {
+          margin: 0;
+        }
+        
+        .dropdown-list li a {
+          color: #fff;
+          display: block;
+          padding: 10px 20px;
+        }
+        
+        .dropdown:hover .dropdown-list {
+          display: block;
+        }
+        
+        /* Hamburger Styles */
+        
+        .nav-toggle {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+        
+        .hamburger {
+          display: block;
+          width: 20px;
+          height: 2px;
+          background-color: #fff;
+          position: relative;
+          margin-top: 3px;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          position: absolute;
+          left: 0;
+          transition: transform 0.3s ease-in-out;
+        }
+        
+        .hamburger::before {
+          transform: translateY(-6px);
+        }
+        
+        .hamburger::after {
+          transform: translateY(6px);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger {
+          transform: rotate(45deg);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger::before {
+          transform: rotate(-45deg) translateY(0);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger::after {
+          transform: rotate(45deg) translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+          .nav-list {
+            display: none;
+            flex-direction: column;
+          }
+          
+          .nav-list li {
+            margin: 10px 0;
+          }
+          
+          .dropdown {
+            position: static;
+          }
+          
+          .dropdown-list {
+            display: block;
+            position: static;
+            background-color: #444;
+            box-shadow: none;
+          }
+          
+          .nav-toggle {
+            display: block;
+          }
+        }
+
+
+/*footer*/
+.bg-dark-1{
+    background-color: black;
+}
+/* Footer Styles */
+#footer .twitter {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+#footer .linkedin {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -78px 0;
+}
+#footer .facebook {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -233px 0;
+}
+#footer .skype {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -156px 0;
+}
+#footer .flickr {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -310px 0;
+}
+#footer a {
+  height: 56px;
+  width: 56px;
+  display: inline-block;
+  margin: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  /* Footer Styles for Small Screens */
+  #footer a {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+  }
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* Footer Styles for Medium Screens */
+  #footer a {
+    height: 48px;
+    width: 48px;
+    margin: 7px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  /* Footer Styles for Large Screens */
+  #footer a:hover {
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+  }
+  #footer .twitter:hover {
+    background-position: 0 -56px;
+  }
+  #footer .facebook:hover {
+    background-position: -233px -56px;
+  }
+  #footer .skype:hover {
+    background-position: -156px -56px;
+  }
+  #footer .linkedin:hover {
+    background-position: -78px -56px;
+  }
+  #footer .flickr:hover {
+    background-position: -310px -56px;
+  }
+}
+
+
+        /*search box */
+.search-box {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.search-button {
+  background-color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fa-search {
+  color: #444;
+}
+
+
+
+
+    </style>
+    <script>
+   function toggleNav() {
+  var navList = document.querySelector('.nav-list');
+  navList.classList.toggle('active');
+  // Show the nav-list when the hamburger icon is clicked
+  if (navList.classList.contains('active')) {
+    navList.style.display = 'flex';
+  } else {
+    navList.style.display = 'none';
+  }
+}
+    </script>
+    <body>
+        <nav class="navbar">
+            <ul class="nav-list">
+              <li><img src="img/logo.png" alt="Logo" style="height:25px ;"></li>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li class="dropdown">
+                <a href="#">Courses</a>
+                <ul class="dropdown-list">
+                  <li><a href="karate.html">karate</a></li>
+          <li><a href="judo.html">Judo</a></li>
+          <li><a href="muaythai.html">Muay Thai</a></li>
+          <li><a href="jujistu.html">Jujistu</a></li>
+          <li><a href="training.html">Personal fitness training</a></li>
+          <li><a href="beginner.html">Beginner's self-defense</a></li>
+                </ul>
+              </li>
+              <li><a href="instructor.html">Instructor details</a></li>
+              <li><a href="fee.html">Fees</a></li>
+              <li ><a href="registration.html">Membership registration</a></li>
+            </ul>
+            <form class="search-form">
+              <input type="text" class="search-box" placeholder="Search..">
+              <button type="submit" class="search-button">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav()">
+              <span class="hamburger"></span>
+            </button>
+            
+          </nav>
+
+          <br>
+          <br>
+          <br>
+          
+          
+          <style>
+            /* CSS styles for the table */
+            
+            table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+@media (max-width: 600px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  th, td {
+    white-space: nowrap;
+  }
+  
+  thead, tbody, tr, th, td {
+    display: block;
+  }
+  
+  tr {
+    margin-bottom: 10px;
+  }
+  
+  td {
+    border-top: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label);
+    font-weight: bold;
+  }
+}
+
+
+            .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .form-container form {
+      display: grid;
+      gap: 10px;
+    }
+
+    .form-container label {
+      font-weight: bold;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    .form-container button[type="submit"] {
+      
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button{
+        background-color: blue;
+        color: white;
+    }
+
+          </style>
+      <div class="container">
+        <h1>Admin Page</h1>
+        <div class="form-container">
+          <h2>Add New Data:</h2>
+          <form id="add-form">
+            <label for="add-name">Name:</label>
+            <input type="text" id="add-name" required>
+            <label for="add-email">Email:</label>
+            <input type="email" id="add-email" required>
+            <label for="gender">Gender:</label>
+            <select id="add-gender" name="gender" required>
+              <option value="">-- Select Gender --</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <label for="add-membership">Membership:</label>
+            <select id="add-membership" required>
+              <option value="">-- Select Membership --</option>
+              <option value="basic">Basic</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+              <option value="elite">Elite</option>
+              <option value="private">Private Tuition</option>
+              <option value="junior">Junior Membership</option>
+            </select>
+            <label for="add-password">Password:</label>
+            <input type="password" id="add-password" required>
+            <label for="add-message">Additional Message:</label>
+            <input type="text" id="add-message">
+            <button type="submit">Add</button>
+          </form>
+        </div>
+        <br><hr>
+        <h2>Registered Data:</h2>
+        <table id="registered-data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Membership</th>
+              <th>Gender</th>
+              <th>Password</th>
+              <th>Additional Message</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="registered-data-body"></tbody>
+        </table>
+      </div>
+      
+      <script>
+        // Display registered data
+        function displayRegisteredData() {
+          const registeredData = JSON.parse(localStorage.getItem("adminData"));
+      
+          if (registeredData && registeredData.length > 0) {
+            const registeredDataBody = document.getElementById("registered-data-body");
+      
+            registeredData.forEach((data, index) => {
+              const row = document.createElement("tr");
+              row.innerHTML = `
+                <td>${data.name}</td>
+                <td>${data.email}</td>
+                <td>${data.membership}</td>
+                <td>${data.gender}</td>
+                <td>${data.password}</td>
+                <td>${data.message}</td>
+                <td>
+                  <button onclick="editData(${index})">Edit</button>
+                  <button onclick="deleteData(${index})">Delete</button>
+                </td>
+              `;
+              registeredDataBody.appendChild(row);
+            });
+          }
+        }
+      
+        displayRegisteredData();
+      
+     // Add new data
+  const addForm = document.getElementById("add-form");
+  addForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const nameInput = document.getElementById("add-name");
+    const emailInput = document.getElementById("add-email");
+    const membershipInput = document.getElementById("add-membership");
+    const genderInput = document.getElementById("add-gender");
+    const passwordInput = document.getElementById("add-password");
+    const messageInput = document.getElementById("add-message");
+
+    const newData = {
+      name: nameInput.value,
+      email: emailInput.value,
+      membership: membershipInput.value,
+      gender: genderInput.value,
+     password: passwordInput.value,
+      message: messageInput.value
+    };
+
+    let registeredData = JSON.parse(localStorage.getItem("adminData"));
+    if (registeredData) {
+      registeredData.push(newData);
+    } else {
+      registeredData = [newData];
+    }
+
+    localStorage.setItem("adminData", JSON.stringify(registeredData));
+      
+          // Clear form inputs
+          nameInput.value = "";
+          emailInput.value = "";
+          membershipInput.value = "";
+          genderInput.value = "";
+          passwordInput.value = "";
+          messageInput.value = "";
+      
+          // Refresh table
+          clearTable();
+          displayRegisteredData();
+        });
+      
+        // Edit data
+       
+      function editData(index) {
+      const registeredData = JSON.parse(localStorage.getItem("adminData"));
+      if (registeredData && registeredData.length > index) {
+      const data = registeredData[index];
+      const nameInput = prompt("Enter the updated name:", data.name);
+      const emailInput = prompt("Enter the updated email:", data.email);
+      const membershipInput = prompt("Enter the updated membership:", data.membership);
+      const genderInput = prompt("Enter the updated gender:", data.gender);
+      const passwordInput = prompt("Enter the updated password:", data.password);
+      const messageInput = prompt("Enter the updated additional message:", data.message);
+      
+      
+        registeredData[index] = {
+          name: nameInput,
+          email: emailInput,
+          membership: membershipInput,
+          gender: genderInput,
+          password: passwordInput,
+          message: messageInput
+        };
+      
+        localStorage.setItem("adminData", JSON.stringify(registeredData));
+      
+        clearTable();
+        displayRegisteredData();
+      }
+      }
+      
+      // Delete data
+      function deleteData(index) {
+      const registeredData = JSON.parse(localStorage.getItem("adminData"));
+      if (registeredData && registeredData.length > index) {
+      registeredData.splice(index, 1);
+      localStorage.setItem("adminData", JSON.stringify(registeredData));
+      
+      
+        clearTable();
+        displayRegisteredData();
+      }
+      }
+      
+      // Clear table
+      function clearTable() {
+      const registeredDataBody = document.getElementById("registered-data-body");
+      registeredDataBody.innerHTML = "";
+      }
+      </script>
+</body>
+</html>
+          
+          
+              
+              
+              
+        
+
+
+
+
+
+
+          <br>
+          <br>
+          <br>
+          
+         
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

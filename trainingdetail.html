@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>DOBU Martial Arts</title>
+        
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    </head>
+    <style>
+        body{
+            background-color: gainsboro;
+        }
+
+    
+    h2 {
+        color: purple;
+        font-size: 32px;
+        margin-top: 40px;
+    }
+    
+    p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+/* Navigation Bar Styles */
+
+.navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color:black;
+          color: #fff;
+          padding: 10px 20px;
+          margin: 0;
+          width: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 1000;
+        }
+        
+        .nav-list {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .nav-list li {
+          margin: 0 10px;
+          position: relative;
+        }
+        
+        .nav-list li a {
+          color: #fff;
+          text-decoration: none;
+        }
+        
+        .dropdown-list {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #333;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .dropdown-list li {
+          margin: 0;
+        }
+        
+        .dropdown-list li a {
+          color: #fff;
+          display: block;
+          padding: 10px 20px;
+        }
+        
+        .dropdown:hover .dropdown-list {
+          display: block;
+        }
+        
+        /* Hamburger Styles */
+        
+        .nav-toggle {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+        
+        .hamburger {
+          display: block;
+          width: 20px;
+          height: 2px;
+          background-color: #fff;
+          position: relative;
+          margin-top: 3px;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          position: absolute;
+          left: 0;
+          transition: transform 0.3s ease-in-out;
+        }
+        
+        .hamburger::before {
+          transform: translateY(-6px);
+        }
+        
+        .hamburger::after {
+          transform: translateY(6px);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger {
+          transform: rotate(45deg);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger::before {
+          transform: rotate(-45deg) translateY(0);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger::after {
+          transform: rotate(45deg) translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+          .nav-list {
+            display: none;
+            flex-direction: column;
+          }
+          
+          .nav-list li {
+            margin: 10px 0;
+          }
+          
+          .dropdown {
+            position: static;
+          }
+          
+          .dropdown-list {
+            display: block;
+            position: static;
+            background-color: #444;
+            box-shadow: none;
+          }
+          
+          .nav-toggle {
+            display: block;
+          }
+        }
+
+
+/*footer*/
+.bg-dark-1{
+    background-color: black;
+}
+/* Footer Styles */
+#footer .twitter {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+#footer .linkedin {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -78px 0;
+}
+#footer .facebook {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -233px 0;
+}
+#footer .skype {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -156px 0;
+}
+#footer .flickr {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -310px 0;
+}
+#footer a {
+  height: 56px;
+  width: 56px;
+  display: inline-block;
+  margin: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  /* Footer Styles for Small Screens */
+  #footer a {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+  }
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* Footer Styles for Medium Screens */
+  #footer a {
+    height: 48px;
+    width: 48px;
+    margin: 7px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  /* Footer Styles for Large Screens */
+  #footer a:hover {
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+  }
+  #footer .twitter:hover {
+    background-position: 0 -56px;
+  }
+  #footer .facebook:hover {
+    background-position: -233px -56px;
+  }
+  #footer .skype:hover {
+    background-position: -156px -56px;
+  }
+  #footer .linkedin:hover {
+    background-position: -78px -56px;
+  }
+  #footer .flickr:hover {
+    background-position: -310px -56px;
+  }
+}
+
+
+        /*search box */
+.search-box {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.search-button {
+  background-color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fa-search {
+  color: #444;
+}
+
+
+/* Style for main section */
+main {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  padding: 50px;
+}
+
+/* Style for course details section */
+.course-details {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.course-details h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.course-details p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #0088cc;
+  color: #fff;
+  margin-right: 15px;
+}
+
+.btn-primary:hover {
+  background-color: #0077b3;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #0088cc;
+  border: 2px solid #0088cc;
+}
+
+.btn-secondary:hover {
+  background-color: #0088cc;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Style for class details section */
+.class-details {
+  text-align: left;
+}
+
+.class-details h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.class-details ul {
+  list-style: none;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.class-details li {
+  margin-bottom: 10px;
+}
+
+.class-details li strong {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.table-responsive {
+  overflow-x: auto;
+  
+}
+
+    </style>
+    <script>
+   function toggleNav() {
+  var navList = document.querySelector('.nav-list');
+  navList.classList.toggle('active');
+  // Show the nav-list when the hamburger icon is clicked
+  if (navList.classList.contains('active')) {
+    navList.style.display = 'flex';
+  } else {
+    navList.style.display = 'none';
+  }
+}
+    </script>
+    <body>
+        <nav class="navbar">
+            <ul class="nav-list">
+              <li><img src="img/logo.png" alt="Logo" style="height:25px ;"></li>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li class="dropdown">
+                <a href="#">Courses</a>
+                <ul class="dropdown-list">
+                  <li><a href="karate.html">karate</a></li>
+          <li><a href="judo.html">Judo</a></li>
+          <li><a href="muaythai.html">Muay Thai</a></li>
+          <li><a href="jujistu.html">Jujistu</a></li>
+          <li><a href="training.html">Personal fitness training</a></li>
+          <li><a href="beginner.html">Beginner's self-defense</a></li>
+                </ul>
+              </li>
+              <li><a href="instructor.html">Instructor details</a></li>
+              <li><a href="fee.html">Fees</a></li>
+              <li ><a href="registration.html">Membership registration</a></li>
+            </ul>
+            <form class="search-form">
+              <input type="text" class="search-box" placeholder="Search..">
+              <button type="submit" class="search-button">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav()">
+              <span class="hamburger"></span>
+            </button>
+            
+          </nav>
+
+          <br>
+          <br>
+          <br>
+          
+
+
+
+
+          <main>
+            <section class="course-details">
+                <h1>Personal fitness training Course</h1>
+                <p>Are you looking to get fit and healthy? Our personal fitness training course is designed to help you achieve your fitness goals in a safe and effective way. Whether you're a beginner or an experienced fitness enthusiast, our experienced trainers will work with you to develop a personalized training plan tailored to your needs and fitness level.</p>
+                <p>Our training program includes a variety of exercises and activities, such as strength training, cardio, and flexibility exercises. We also offer nutritional guidance to help you achieve your desired results faster.</p>
+                <p>Our training facility is equipped with state-of-the-art equipment and amenities, including a fully equipped gym, personal training rooms, and locker rooms.</p>
+                <img src="img/foyp2.jpg" style="height: 500px; width: auto;">
+                <div class="buttons">
+                  <a href="registration.html" class="btn-primary">Join Course</a>
+                  <a href="training.html" class="btn-secondary">Back</a>
+                </div>
+                <br>
+              </section>
+              
+              
+              
+              
+              
+              
+        
+            <section class="class-details" >
+                <h2>Class Details</h2><div class="table-responsive">
+                <table  >
+                  <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                  </tr>
+                  <tr>
+                    <td>6:00-7:00</td>
+                    <td>Jujitsu</td>
+                    <td>Karate</td>
+                    <td>Judo</td>
+                    <td>Jujitsu</td>
+                    <td>Muay Thai</td>
+                    <td>---</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>8:00-10:00</td>
+                    <td>Muay Thai</td>
+                    <td>Private Tuition</td>
+                    <td>Private Tuition</td>
+                    <td>Private Tuition</td>
+                    <td>Jujitsu</td>
+                    <td>Private Tuition</td>
+                    <td>Private Tuition</td>
+                  </tr>
+                  <tr>
+                    <td>10:30-12:00</td>
+                    <td>Private Tuition</td>
+                    <td>Private Tuition</td>
+                    <td>Private Tuition</td>
+                    <td>Private Tuition</td>
+                    <td>Private Tuition</td>
+                    <td>Judo</td>
+                    <td>Karate</td>
+                  </tr>
+                  <tr>
+                    <td>13:00-14:30</td>
+                    <td>Practise</td>
+                    <td>Practise</td>
+                    <td>Practise</td>
+                    <td>Practise</td>
+                    <td>Practise</td>
+                    <td>Karate</td>
+                    <td>Judo</td>
+                  </tr>
+                  <tr>
+                    <td>15:00-17:00</td>
+                    <td>Kid Jujitsu</td>
+                    <td>Kid Judo</td>
+                    <td>Kid Karate</td>
+                    <td>Kid Jujitsu</td>
+                    <td>Kid Judo</td>
+                    <td>Muay Thai</td>
+                    <td>Jujitsu</td>
+                  </tr>
+                  <tr>
+                    <td>17:30-19:00</td>
+                    <td>Karate</td>
+                    <td>Muay Thai</td>
+                    <td>Judo</td>
+                    <td>Jujitsu</td>
+                    <td>Muay Thai</td>
+                    <td>---</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>19:00-21:00</td>
+                    <td>Jujitsu</td>
+                    <td>Judo</td>
+                    <td>Jujitsu</td>
+                    <td>Karate</td>
+                    <td>Private Tuition</td>
+                    <td>---</td>
+                    <td>---</td>
+                  </tr>
+                </table></div>
+                <ul>
+                    <li><strong>Instructor:</strong> Traci Santiago/Harpreet Kaur</li>
+                    <li><strong>Location:</strong> Martial Arts Area</li>
+                  </ul>
+              </section>
+              
+          </main>
+
+
+
+
+
+
+
+          <br>
+          <br>
+          <br>
+          
+          <footer class="bg-dark-1">
+            <section id="footer" class="py-5">
+              <div class="container text-center">
+                <a href="#" class="twitter"></a>
+                <a href="#" class="linkedin"></a>
+                <a href="#" class="facebook"></a>
+                <a href="#" class="skype"></a>
+                <a href="#" class="flickr"></a>
+                <h6 class="m-0 mt-4 text-center text-white text-capitalize">Location: Myitkyina Township/Myanmar</h6>
+              </div>
+            </section>
+            <div style="text-align: center;"><a href="#">privacy and policy</a></div>
+            <br>
+            <br>
+            
+          </footer>
+
+    </body>
+</html>

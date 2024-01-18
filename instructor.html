@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>DOBU Martial Arts</title>
+        
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    </head>
+    <style>
+ body{
+            background-color: gainsboro;
+        }
+.container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    h2 {
+        color: purple;
+        font-size: 32px;
+        margin-top: 40px;
+    }
+    
+    p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+/* Navigation Bar Styles */
+
+.navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color:black;
+          color: #fff;
+          padding: 10px 20px;
+          margin: 0;
+          width: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 1000;
+        }
+        
+        .nav-list {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .nav-list li {
+          margin: 0 10px;
+          position: relative;
+        }
+        
+        .nav-list li a {
+          color: #fff;
+          text-decoration: none;
+        }
+        
+        .dropdown-list {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #333;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .dropdown-list li {
+          margin: 0;
+        }
+        
+        .dropdown-list li a {
+          color: #fff;
+          display: block;
+          padding: 10px 20px;
+        }
+        
+        .dropdown:hover .dropdown-list {
+          display: block;
+        }
+        
+        /* Hamburger Styles */
+        
+        .nav-toggle {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+        
+        .hamburger {
+          display: block;
+          width: 20px;
+          height: 2px;
+          background-color: #fff;
+          position: relative;
+          margin-top: 3px;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          position: absolute;
+          left: 0;
+          transition: transform 0.3s ease-in-out;
+        }
+        
+        .hamburger::before {
+          transform: translateY(-6px);
+        }
+        
+        .hamburger::after {
+          transform: translateY(6px);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger {
+          transform: rotate(45deg);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger::before {
+          transform: rotate(-45deg) translateY(0);
+        }
+        
+        .nav-toggle[aria-expanded="true"] .hamburger::after {
+          transform: rotate(45deg) translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+          .nav-list {
+            display: none;
+            flex-direction: column;
+          }
+          
+          .nav-list li {
+            margin: 10px 0;
+          }
+          
+          .dropdown {
+            position: static;
+          }
+          
+          .dropdown-list {
+            display: block;
+            position: static;
+            background-color: #444;
+            box-shadow: none;
+          }
+          
+          .nav-toggle {
+            display: block;
+          }
+        }
+
+
+/*footer*/
+.bg-dark-1{
+    background-color: black;
+}
+/* Footer Styles */
+#footer .twitter {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+#footer .linkedin {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -78px 0;
+}
+#footer .facebook {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -233px 0;
+}
+#footer .skype {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -156px 0;
+}
+#footer .flickr {
+  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+  background-repeat: no-repeat;
+  background-position: -310px 0;
+}
+#footer a {
+  height: 56px;
+  width: 56px;
+  display: inline-block;
+  margin: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  /* Footer Styles for Small Screens */
+  #footer a {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* Footer Styles for Medium Screens */
+  #footer a {
+    height: 48px;
+    width: 48px;
+    margin: 7px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  /* Footer Styles for Large Screens */
+  #footer a:hover {
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+  }
+  #footer .twitter:hover {
+    background-position: 0 -56px;
+  }
+  #footer .facebook:hover {
+    background-position: -233px -56px;
+  }
+  #footer .skype:hover {
+    background-position: -156px -56px;
+  }
+  #footer .linkedin:hover {
+    background-position: -78px -56px;
+  }
+  #footer .flickr:hover {
+    background-position: -310px -56px;
+  }
+}
+
+
+        /*search box */
+.search-box {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.search-button {
+  background-color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fa-search {
+  color: #444;
+}
+    </style>
+    <script>
+
+function toggleNav() {
+  var navList = document.querySelector('.nav-list');
+  navList.classList.toggle('active');
+  // Show the nav-list when the hamburger icon is clicked
+  if (navList.classList.contains('active')) {
+    navList.style.display = 'flex';
+  } else {
+    navList.style.display = 'none';
+  }
+}
+    </script>
+    <body>
+        <nav class="navbar">
+            <ul class="nav-list">
+              <li><img src="img/logo.png" alt="Logo" style="height:25px ;"></li>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li class="dropdown">
+                <a href="#">Courses</a>
+                <ul class="dropdown-list">
+                  <li><a href="karate.html">karate</a></li>
+          <li><a href="judo.html">Judo</a></li>
+          <li><a href="muaythai.html">Muay Thai</a></li>
+          <li><a href="jujistu.html">Jujistu</a></li>
+          <li><a href="training.html">Personal fitness training</a></li>
+          <li><a href="beginner.html">Beginner's self-defense</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Instructor details</a></li>
+              <li><a href="fee.html">Fees</a></li>
+              <li ><a href="registration.html">Membership registration</a></li>
+            </ul>
+            <form class="search-form">
+              <input type="text" class="search-box" placeholder="Search..">
+              <button type="submit" class="search-button">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav()">
+              <span class="hamburger"></span>
+            </button>
+            
+          </nav>
+
+          <br>
+          <br>
+          <br>
+          
+
+
+          <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                <img src="img/i1.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+          <img src="https://shorturl.at/uvO01" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+          <img src="https://shorturl.at/rDE36" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">	
+                </div>
+        
+                <div class="col-md-6">
+                    <h2 style="color:green;">Mauricio Gomez</h2><br>
+        <h3>Job Position</h3>
+        <div>Gym Owner/Head Martial Coach</div>
+        </p>
+        <br>
+        <h3>Instructor's Details</h3>
+        <div>(1)Mauricio Gomez is a highly skilled martial artist and the owner of DoBu Martial Arts. </div><hr>
+        <div>
+          (2)He is a coach in all martial arts offered by the gym and holds a 4th Dan Blackbelt in judo, a 3rd Dan Blackbelt in jujitsu, and a 1st Dan Blackbelt in karate. 
+        </div><hr>
+        <div>
+        (3)He is also an accredited Muay Thai Coach. Mauricio has years of experience teaching and training martial artists of all levels, 
+        </div><hr>
+        <div>
+          (4)and he brings a wealth of knowledge and expertise to his role as head martial coach at DoBu.
+        </div><hr>
+        <div >
+            <h3>Rating
+          <span>★</span>
+          <span >★</span>
+          <span>★</span>
+          <span>★</span>
+          <span >★</span>
+          
+        </h3> 
+        </div>
+        <div style="text-align:center"><h4> Train with him</h4>
+            <a href="register.html"><button class="button">Yes</button></a>
+        <a href=""><button class="button">Cancel</button></a> 
+        </div>
+        <ul>
+        <li>
+          <span>Coach in all martial arts.</span>
+        </li>
+        <li>
+          <span>4th Dan Blackbelt in Judo.</span>
+        </li>
+        <li>
+          <span>3rd Dan Blackbelt in Jujitsu.</span>
+        </li>
+        <li>
+            <span>1st Dan Blackbelt in Karate.</span>
+          </li>
+          <li>
+            <span>Accredited Muay Thai Coach.</span>
+          </li>
+        </ul>
+                </div></div></div></div>
+            </div>
+        </div>
+        <br><hr>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                <img src="img/i6.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+          <img src="img/i61.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+          <img src="img/i62.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">	
+                </div>
+        
+                <div class="col-md-6">
+                    <h2 style="color:green;">Guy Victory</h2><br>
+        <h3>Job Position</h3>
+        <div>Assistant Martial Arts Coach</div>
+        </p>
+        <br>
+        <h3>Instructor's Details</h3>
+        <div>(1)Guy Victory is an assistant martial arts coach at DoBu and holds a 2nd Dan Blackbelt in jujitsu and a 1st Dan Blackbelt in judo. </div><hr>
+        <div>
+          (2)He is a highly skilled martial artist with a passion for teaching and helping students achieve their goals.
+        </div><hr>
+        <div>
+        (3)He brings a unique perspective to her coaching role, and his experience and knowledge of multiple martial arts make his an invaluable asset to the DoBu team.
+        </div>
+        <hr>
+        <div >
+        <h3>Rating
+          <span>★</span>
+          <span >★</span>
+          <span>★</span>
+          <span>★</span>
+          <span >&#11240;</span>
+          
+        </h3> 
+        </div>
+        <div style="text-align:center"><h4> Train with him</h4>
+            <a href="register.html"><button class="button">Yes</button></a>
+        <a href=""><button class="button">Cancel</button></a> 
+        </div>
+        <ul>
+        <li>
+          <span>Assistant martial arts coach.</span>
+        </li>
+        <li>
+          <span>2nd Dan Blackbelt in Jujitsu.</span>
+        </li>
+        <li>
+          <span>1st Dan Blackbelt in Judo</span>
+        </li>
+        </ul>
+        
+                </div></div></div></div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                <img src="img/i3.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+          <img src="https://shorturl.at/dNUZ7" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+          <img src="https://shorturl.at/gtMT9" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">	
+                </div>
+        
+                <div class="col-md-6">
+                    <h2 style="color:green;">Morris Davis</h2><br>
+        <h3>Job Position</h3>
+        <div>Assistant Martial Arts Coach</div>
+        </p>
+        <br>
+        <h3>Instructor's Details</h3>
+        <div>(1)Morris Davis is an accredited Muay Thai Coach and an assistant martial arts coach at DoBu.</div><hr>
+        <div>
+          (2)e holds a 3rd Dan Blackbelt in karate and has extensive experience teaching and training martial artists of all levels. 
+        </div><hr>
+        <div>
+        (3)Morris has a unique teaching style that emphasizes discipline, hard work, and perseverance, and he is dedicated to helping his students achieve their full potential.
+        </div><hr>
+        <br><br>
+        <div >
+        <h3>Rating
+          <span>★</span>
+          <span >★</span>
+          <span>★</span>
+          <span>★</span>
+          <span >&#11240;</span>
+          
+        </h3> 
+        </div>
+        <div style="text-align:center"><h4> Train with him</h4>
+            <a href="register.html"><button class="button">Yes</button></a>
+        <a href=""><button class="button">Cancel</button></a> 
+        </div>
+        <ul>
+        <li>
+          <span>Assistant martial arts coach.</span>
+        </li>
+        <li>
+          <span>Accredited Muay Thai Coach.</span>
+        </li>
+        <li>
+          <span>3rd Dan Blackbelt in Karate.</span>
+        </li>
+        </ul>
+        
+                </div></div></div></div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                <img src="img/i4.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+          <img src="img/i41.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+          <img src="img/i42.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">	
+                </div>
+        
+                <div class="col-md-6">
+                    <h2 style="color:green;">Traci Santiago</h2><br>
+        <h3>Job Position</h3>
+        <div>Fitness Coach</div>
+        </p>
+        <br>
+        <h3>Instructor's Details</h3>
+        <div>(1)Traci Santiago is a fitness coach at DoBu and holds a BSc in sports science.</div><hr>
+        <div>
+          (2)She is also qualified in health and nutrition and specializes in devising strength and conditioning programs for combat athletes. 
+        </div><hr>
+        <div>
+        (3)Traci has a deep understanding of the physical demands of martial arts and is dedicated to helping her clients build strength, endurance, and flexibility through customized training programs.
+        </div><hr>
+       
+        <div >
+        <h3>Rating
+          <span>★</span>
+          <span >★</span>
+          <span>★</span>
+          <span>&#11240;</span>
+          <span >&#11240;</span>
+          
+        </h3> 
+        </div>
+        <div style="text-align:center"><h4> Train with her</h4>
+            <a href="register.html"><button class="button">Yes</button></a>
+        <a href=""><button class="button">Cancel</button></a> 
+        </div>
+        <ul>
+        <li>
+          <span>Holds a BSc in Sports Science.</span>
+        </li>
+        <li>
+          <span>Qualified in health and nutrition.</span>
+        </li>
+        <li>
+          <span>Specializes in devising strength and conditioning programs for combat athletes.</span>
+        </li>
+        </ul>
+        
+                </div></div></div></div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                <img src="img/i5.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+          <img src="img/i51.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+          <img src="img/i52.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">	
+                </div>
+        
+                <div class="col-md-6">
+                    <h2 style="color:green;">Harper Kaur</h2><br>
+        <h3>Job Position</h3>
+        <div>Fitness Coach </div>
+        </p>
+        <br>
+        <h3>Instructor's Details</h3>
+        <div>(1)Harper Kaur is a fitness coach at DoBu and holds a BSc in physiotherapy and an MSc in sports science.</div><hr>
+        <div>
+          (2)She brings a unique perspective to her coaching role, with a deep understanding of the biomechanics of movement and a passion for helping her clients achieve their fitness goals.
+        </div><hr>
+        <div>
+        (3)Harper specializes in functional training and injury prevention, and she works closely with her clients to design personalized training programs that meet their specific needs and abilities
+        </div><hr>
+
+        <div >
+        <h3>Rating
+          <span>★</span>
+          <span >★</span>
+          <span>★</span>
+          <span>★</span>
+          <span >&#11240;</span>
+          
+        </h3> 
+        </div>
+        <div style="text-align:center"><h4> Train with her</h4>
+            <a href="register.html"><button class="button">Yes</button></a>
+        <a href=""><button class="button">Cancel</button></a> 
+        </div>
+        <ul>
+        <li>
+          <span>Fitness coach.</span>
+        </li>
+        <li>
+          <span>Holds a BSc in Physiotherapy.</span>
+        </li>
+        <li>
+          <span>Holds an MSc in Sports Science.</span>
+        </li>
+        </ul>
+        
+                </div></div></div></div>
+                <hr>
+
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <img src="img/i2.jpg" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+                        <img src="https://shorturl.at/dgyIJ" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">
+                        <img src="https://shorturl.at/bmBMW" style="float: left;border: 1px solid; margin: 0px 0px 15px 20px;" width="300" height="300">	
+                        </div>
+                
+                        <div class="col-md-6">
+                            <h2 style="color:green;">Sara Nova</h2><br>
+                <h3>Job Position</h3>
+                <div>Assistant martial art coach </div>
+                </p>
+                <br>
+                <h3>Instructor's Details</h3>
+                <div>(1)Sara Nova(assistant martial arts coach) holds a 5th Dan blackbelt in karate, making her an expert in the field. </div><hr>
+                <div>
+                  (2)She has extensive experience teaching martial arts to students of all levels, from beginners to advanced practitioners.
+                </div><hr>
+                <div>
+                (3). As an assistant coach at DoBu Martial Arts, she is dedicated to supporting the head coach in developing training programs and teaching techniques that will help students reach their full potential.
+                </div><hr>
+                
+                <div >
+                <h3>Rating
+                  <span>★</span>
+                  <span >★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span >&#11240;</span>
+                  
+                </h3> 
+                </div>
+                <div style="text-align:center"><h4> Train with her</h4>
+                    <a href="register.html"><button class="button">Yes</button></a>
+                <a href=""><button class="button">Cancel</button></a> 
+                </div>
+                <ul>
+                <li>
+                  <span>Assistant martial art coach</span>
+                </li>
+                <li>
+                  <span>5th Dan Karate</span>
+                </li>
+               
+                </ul>
+                
+                        </div></div></div></div>
+
+            </div>
+        </div>
+
+
+
+
+
+          <br>
+          <br>
+          <br>
+          
+          <footer class="bg-dark-1">
+            <section id="footer" class="py-5">
+              <div class="container text-center">
+                <a href="#" class="twitter"></a>
+                <a href="#" class="linkedin"></a>
+                <a href="#" class="facebook"></a>
+                <a href="#" class="skype"></a>
+                <a href="#" class="flickr"></a>
+                <h6 class="m-0 mt-4 text-center text-white text-capitalize">Location: Myitkyina Township/Myanmar</h6>
+              </div>
+            </section>
+            <div style="text-align: center;"><a href="privacy.html">privacy and policy</a></div>
+            <br>
+            <br>
+            
+          </footer>
+    </body>
+</html>
